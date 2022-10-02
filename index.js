@@ -1,6 +1,6 @@
 const http = require("http");
 const secret =
-  process.env.gotSecret === true ? "Has Secret" : "No Configured Secret";
+  process.env.gotSecret === "true" ? "Has Secret" : "No Configured Secret";
 const server = http.createServer((request, response) => {
   response.writeHead(200, { "Content-Type": "text/plain" });
   response.end(`Hello, ${secret} '${process.env.gotSecret}'`);
